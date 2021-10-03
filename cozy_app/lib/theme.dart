@@ -14,7 +14,7 @@ TextStyle blackTextStyle = GoogleFonts.poppins(
 
 TextStyle whiteTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w500,
-  color: blackColor,
+  color: WhiteColor,
 );
 
 TextStyle greyTextStyle = GoogleFonts.poppins(
