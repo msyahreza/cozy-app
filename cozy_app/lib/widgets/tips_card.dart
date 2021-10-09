@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:cozy_app/model/tips.dart';
 import 'package:cozy_app/theme.dart';
 import 'package:flutter/material.dart';
