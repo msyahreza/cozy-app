@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:cozy_app/model/city.dart';
 import 'package:cozy_app/model/space.dart';
@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: WhiteColor,
       body: SafeArea(
           bottom: false,
           child: ListView(
