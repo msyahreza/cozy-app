@@ -14,7 +14,7 @@ class DetailPage extends StatelessWidget {
         launch(url);
       } else {
         Navigator.push(context, MaterialPageRoute(
-          builder: (context) => ErrorPage(f)
+          builder: (context) => ErrorPage()
           )
         );
       }
