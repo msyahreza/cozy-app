@@ -5,9 +5,9 @@ class Tips {
   String updatedAt;
 
   Tips({
-    required this.id,
-    required this.title,
-    required this.imageUrl,
-    required this.updatedAt
+    this.id,
+    this.title,
+    this.imageUrl,
+    this.updatedAt
   });
 }

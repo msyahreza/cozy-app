@@ -1,52 +1,51 @@
-import 'package:cozy_app/widgets/space_card.dart';
-
+// @dart=2.9
 class Space {
-  late int id = 0;
-  late String name;
-  late String imageUrl;
-  late int price;
-  late String city;
-  late String country;
-  late int rating;
-  late String address;
-  late String phone;
-  late String mapUrl;
-  late List photos;
-  late int numberOfKitchens;
-  late int numberOfBedrooms;
-  late int numberOfCupboards;
+  int id;
+  String name;
+  String imageUrl;
+  int price;
+  String city;
+  String country;
+  int rating;
+  String address;
+  String phone;
+  String mapUrl;
+  List photos;
+  int numberOfKitchens;
+  int numberOfBedrooms;
+  int numberOfCupboards;
 
   Space({
-    required this.city,
-    required this.country,
-    required this.id,
-    required this.imageUrl,
-    required this.name,
-    required this.price,
-    required this.rating,
-    required this.address,
-    required this.phone,
-    required this.mapUrl,
-    required this.photos,
-    required this.numberOfKitchens,
-    required this.numberOfBedrooms,
-    required this.numberOfCupboards,
+    this.id,
+    this.country,
+    this.name,
+    this.city,
+    this.imageUrl,
+    this.price,
+    this.rating,
+    this.address,
+    this.mapUrl,
+    this.numberOfBedrooms,
+    this.numberOfCupboards,
+    this.numberOfKitchens,
+    this.phone,
+    this.photos,
   });
 
-  Space.fromJson(Map<String, dynamic> json) {
+  Space.fromJson(json) {
     id = json['id'];
     name = json['name'];
     city = json['city'];
     country = json['country'];
-    price = json['price'];
     imageUrl = json['image_url'];
+    price = json['price'];
     rating = json['rating'];
     address = json['address'];
     phone = json['phone'];
     mapUrl = json['map_url'];
-    photos = json['photos'].cast<String>();
-    numberOfKitchens = json['number_of_kitchens'];
+    photos = json['photos'];
     numberOfBedrooms = json['number_of_bedrooms'];
     numberOfCupboards = json['number_of_cupboards'];
+    numberOfKitchens = json['number_of_kitchens'];
   }
 }

@@ -119,72 +119,17 @@ class HomePage extends StatelessWidget {
                   future: spaceProvider.getRecommendedSpaces(),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
+                      List<Space> data = snapshot.data;
+
+                      int index = 0;
+
                       return Column(
-                        children: [
-                          SpaceCard(
-                            Space(
-                              city: 'Bandung',
-                              country: 'Germany',
-                              id: 1,
-                              imageUrl: 'assets/space1.png',
-                              name: 'Kuretakeso Hott',
-                              price: 11,
-                              rating: 4,
-                              address: " ",
-                              phone: " ",
-                              mapUrl: " ",
-                              photos: [],
-                              numberOfKitchens: 0,
-                              numberOfBedrooms: 0,
-                              numberOfCupboards: 0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          SpaceCard(
-                            Space(
-                              city: 'Seattle',
-                              country: 'Bogor',
-                              id: 2,
-                              imageUrl: 'assets/space2.png',
-                              name: 'Roemah Nenek',
-                              price: 11,
-                              rating: 5,
-                              address: " ",
-                              phone: " ",
-                              mapUrl: " ",
-                              photos: [],
-                              numberOfKitchens: 0,
-                              numberOfBedrooms: 0,
-                              numberOfCupboards: 0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          SpaceCard(
-                            Space(
-                              city: 'Jakarta',
-                              country: 'Indonesia',
-                              id: 3,
-                              imageUrl: 'assets/space3.png',
-                              name: 'Darrling How',
-                              price: 20,
-                              rating: 3,
-                              address: " ",
-                              phone: " ",
-                              mapUrl: " ",
-                              photos: [],
-                              numberOfKitchens: 0,
-                              numberOfBedrooms: 0,
-                              numberOfCupboards: 0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                        ],
+                        children: data.map((item) {
+                          index++;
+                          return Container(
+                              margin: EdgeInsets.only(top: index == 1 ? 0 : 30),
+                              child: SpaceCard(item));
+                        }).toList(),
                       );
                     }
                     return Center(
