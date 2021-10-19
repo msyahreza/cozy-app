@@ -30,6 +30,38 @@ class _DetailPageState extends State<DetailPage> {
       }
     }
 
+    Future<void> showConfirmation() async {
+      return showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text('Konfirmasi'),
+              content: SingleChildScrollView(
+                child: ListBody(
+                  children: const <Widget>[
+                    Text('Apakah kamu ingin menghubungi owner?'),
+                  ],
+                ),
+              ),
+              actions: <Widget>[
+                TextButton(
+                  child: const Text('Batal'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+                TextButton(
+                  child: const Text('Hubungi'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    launchUrl('tel:${widget.space.phone}');
+                  },
+                ),
+              ],
+            );
+          });
+    }
+
     return Scaffold(
       backgroundColor: WhiteColor,
       body: SafeArea(
@@ -253,7 +285,7 @@ class _DetailPageState extends State<DetailPage> {
                         width: MediaQuery.of(context).size.width - (2 * edge),
                         child: RaisedButton(
                           onPressed: () {
-                            launchUrl('tel:${widget.space.phone}');
+                            showConfirmation();
                           },
                           color: purpleColor,
                           shape: RoundedRectangleBorder(
@@ -282,6 +314,10 @@ class _DetailPageState extends State<DetailPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Text(
+                    '${widget.space.address}\n${widget.space.city}',
+                    style: greyTextStyle,
+                  ),
                   InkWell(
                     onTap: () {
                       Navigator.pop(context);
@@ -298,9 +334,9 @@ class _DetailPageState extends State<DetailPage> {
                       });
                     },
                     child: Image.asset(
-                      isClicked 
-                      ? 'assets/btn_wishlist_true.png' 
-                      :'assets/btn_wishlist.png',
+                      isClicked
+                          ? 'assets/btn_wishlist_true.png'
+                          : 'assets/btn_wishlist.png',
                       width: 40,
                     ),
                   ),
