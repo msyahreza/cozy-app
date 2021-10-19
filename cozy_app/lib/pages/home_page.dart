@@ -94,6 +94,31 @@ class HomePage extends StatelessWidget {
                     SizedBox(
                       width: 24,
                     ),
+                    CityCard(City(
+                      id: 4,
+                      imageUrl: 'assets/city4.png',
+                      name: 'Palembang',
+                    )),
+                    SizedBox(
+                      width: 24,
+                    ),
+                    CityCard(City(
+                      id: 5,
+                      imageUrl: 'assets/city5.png',
+                      name: 'Aceh',
+                      isPopular: true,
+                    )),
+                    SizedBox(
+                      width: 24,
+                    ),
+                    CityCard(City(
+                      id: 6,
+                      imageUrl: 'assets/city6.png',
+                      name: 'Bogor',
+                    )),
+                    SizedBox(
+                      width: 24,
+                    ),
                   ],
                 ),
               ),
@@ -137,6 +162,9 @@ class HomePage extends StatelessWidget {
                     );
                   },
                 ),
+              ),
+              SizedBox(
+                height: 25,
               ),
               //TIPS AND GUIDANCE
               Padding(

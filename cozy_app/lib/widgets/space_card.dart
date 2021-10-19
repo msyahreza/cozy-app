@@ -17,7 +17,7 @@ class SpaceCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailPage()
+            builder: (context) => DetailPage(space)
           ),
         );
       },
@@ -79,7 +79,7 @@ class SpaceCard extends StatelessWidget {
               Text(
                 space.name,
                 style: blackTextStyle.copyWith(
-                  fontSize: 18,
+                  fontSize: 16,
                 ),
               ),
               SizedBox(
